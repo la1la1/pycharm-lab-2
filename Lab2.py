@@ -33,6 +33,16 @@ def find_min_max(numberset2):
     return min_max[0], min_max[1]
 
 
+def calc_median_temperature(numberset3):
+    n = len(numberset3)
+    s = sorted(numberset3)
+    index = (n - 1) // 2
+
+    if n % 2 == 0:
+        return ( s[index] + s[index + 1]) / 2.0
+    else:
+        return s[index]
+
 def main():
     display_main_menu()
     num_list = get_user_input()
@@ -44,6 +54,8 @@ def main():
     maxnumber = minimum_max[1]
     print("The minimum temperature is " + str(minnumber) + " and the maximum temperature "
           + str(maxnumber))
+    median = calc_median_temperature(num_list)
+    print("The median number is: " + str(median))
 
 
 if __name__ == "__main__":
